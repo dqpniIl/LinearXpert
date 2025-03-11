@@ -1,0 +1,36 @@
+﻿<Page x:Class="LinearXpert.Pages.PageAddUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LinearXpert.Pages"
+      mc:Ignorable="d" d:DesignHeight="956" d:DesignWidth="1526">
+    <Grid>
+        <Button Name="btnBack" Style="{StaticResource btnPattern}" Click="btnBack_Click" HorizontalAlignment="Left" Width="60" Height="60" VerticalAlignment="Top" Background="LightGray">
+            <Button.Content>
+                <Image Source="/Resources/back.png" Width="50" Height="50"/>
+            </Button.Content>
+        </Button>
+        <Label Content="Профиль" HorizontalAlignment="Left" Margin="310,68,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="235,128,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox Name="tbLogin" Text="{Binding login_User}" Style="{StaticResource tbPattern}" HorizontalAlignment="Left" Margin="235,167,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="287" FontSize="22"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="235,208,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox Name="tbSurname" Text="{Binding Profiles.surname_Profile}" Style="{StaticResource tbPattern}" HorizontalAlignment="Left" Margin="235,248,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="287" FontSize="22"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="235,290,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox Name="tbName" Text="{Binding Profiles.name_Profile}" Style="{StaticResource ResourceKey=tbPattern}" HorizontalAlignment="Left" Margin="235,328,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="287" FontSize="22"/>
+        <Label Content="Отчество" HorizontalAlignment="Left" Margin="235,372,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox Name="tbPatronymic" Text="{Binding Profiles.patronymic_Profile}" Style="{StaticResource ResourceKey=tbPattern}" HorizontalAlignment="Left" Margin="235,410,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="287" FontSize="22"/>
+        <StackPanel Margin="235,452,1004,266">
+            <Label Name="lblRole" Content="Роль" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="22"/>
+            <ComboBox Name="comboRole" SelectedItem="{Binding Roles}" HorizontalAlignment="Left" Margin="0,0,0,0" Width="287" Height="42" BorderThickness="3" FontSize="22" SelectionChanged="comboRole_SelectionChanged"/>
+            <Label Name="lblGroup" Content="Группа" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="22"/>
+            <ComboBox Name="comboGroups" SelectedItem="{Binding Profiles.Groups}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="287" Height="42" BorderThickness="3" FontSize="22"/>
+            <Button Name="btnSave" Content="Сохранить" Style="{StaticResource ResourceKey=btnPattern}" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Height="41" Width="287" FontSize="22" Click="btnSave_Click"/>
+        </StackPanel>
+        <Label Content="Пользователь" HorizontalAlignment="Left" Margin="805,68,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="763,127,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox Name="tbPassword" Style="{StaticResource ResourceKey=tbPattern}" Text="***********" IsEnabled="False" HorizontalAlignment="Left" Margin="763,166,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="287" FontSize="22"/>
+        <Button Name="btnNewPassword" Content="Поменять" Style="{StaticResource ResourceKey=btnPattern}" HorizontalAlignment="Left" Margin="763,228,0,0" VerticalAlignment="Top" Height="41" Width="287" FontSize="22" Click="btnNewPassword_Click"/>
+        <Button Name="btnSavePassword" Content="Сохранить пароль" Style="{StaticResource ResourceKey=btnPattern}" HorizontalAlignment="Left" Margin="763,280,0,0" VerticalAlignment="Top" Height="41" Width="287" FontSize="22" Click="btnSavePassword_Click"/>
+    </Grid>
+</Page>

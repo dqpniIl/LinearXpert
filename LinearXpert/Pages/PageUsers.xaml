@@ -1,0 +1,56 @@
+﻿<Page x:Class="LinearXpert.Pages.PageUsers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LinearXpert.Pages"
+      mc:Ignorable="d" d:DesignHeight="956" d:DesignWidth="1526" IsVisibleChanged="Page_IsVisibleChanged">
+    <Grid>
+        <Label Content="Пользователи" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" FontSize="36" FontWeight="Bold"/>
+        <Button Name="btnAdd" Style="{StaticResource btnPattern}" Width="60" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Background="LightGray" Margin="752,2,0,0" FontSize="36" FontWeight="Bold" Click="btnAdd_Click">
+            <Image Source="/Resources/plus.png" Width="40" Height="40"/>
+        </Button>
+        <Button Name="btnDel" Style="{StaticResource btnPattern}" Width="60" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Background="LightGray" Margin="817,2,0,0" FontSize="36" FontWeight="Bold" Click="btnDel_Click">
+            <Image Source="/Resources/delete.png" Width="50" Height="50"/>
+        </Button>
+        <TextBox Name="tbSearch" Style="{StaticResource searchTextbox}" Margin="884,10,260,0" VerticalAlignment="Top" TextChanged="tbSearch_TextChanged"/>
+        <Image Source="/Resources/search.png" HorizontalAlignment="Left" Margin="894,22,0,0" VerticalAlignment="Top" Height="20" Width="20"/>
+        <ComboBox Name="comboSearch" HorizontalAlignment="Left" Margin="1272,11,0,0" VerticalAlignment="Top" Width="244" Height="46" FontSize="24" BorderThickness="3" SelectionChanged="comboSearch_SelectionChanged">
+            <ComboBox.ToolTip>
+                <ToolTip>Поиск по ролям</ToolTip>
+            </ComboBox.ToolTip>
+        </ComboBox>
+        <DataGrid Name="dGridUsers" Style="{StaticResource dGridPattern}" Margin="0,70,0,0" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" Binding="{Binding login_User}" Width="100"/>
+                <DataGridTextColumn Header="Роль" Binding="{Binding Roles.name_Role}" Width="135"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Profiles.surname_Profile}" Width="100"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Profiles.name_Profile}" Width="100"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Profiles.patronymic_Profile}" Width="110"/>
+                <DataGridTextColumn Header="Группа" Binding="{Binding Profiles.Groups.name_Group}" Width="*"/>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnEdit" Style="{StaticResource btnPattern}" Width="80" Height="40" Background="LightGray" Click="BtnEdit_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/redaktirovanie.png" Width="30" Height="30"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Настройка" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnSetGroups" Style="{StaticResource btnPattern}" Width="80" Height="40" Background="LightGray" Click="BtnSetGroups_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/setting.png" Width="30" Height="30"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

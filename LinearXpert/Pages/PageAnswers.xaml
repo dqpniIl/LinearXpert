@@ -1,0 +1,49 @@
+﻿<Page x:Class="LinearXpert.Pages.PageAnswers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LinearXpert.Pages"
+      mc:Ignorable="d" d:DesignHeight="956" d:DesignWidth="1526" IsVisibleChanged="Page_IsVisibleChanged">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27*"></RowDefinition>
+            <RowDefinition Height="377*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox Name="tbSearch" Style="{StaticResource searchTextbox}" Margin="1088,0,10,0" TextChanged="tbSearch_TextChanged"/>
+        <Image Source="/Resources/search.png" HorizontalAlignment="Left" Margin="1098,0,0,0" VerticalAlignment="Center" Height="20" Width="20"/>
+        <Button Name="btnAdd" Style="{StaticResource btnPattern}" Width="60" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Background="LightGray" Margin="955,2,0,0" FontSize="36" FontWeight="Bold" Click="btnAdd_Click">
+            <Button.Content>
+                <Image Source="/Resources/plus.png" Width="40" Height="40"/>
+            </Button.Content>
+        </Button>
+        <Button Name="btnDel" Style="{StaticResource btnPattern}" Width="60" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Background="LightGray" Margin="1020,2,0,0" FontSize="36" FontWeight="Bold" Click="btnDel_Click">
+            <Button.Content>
+                <Image Source="/Resources/delete.png" Width="50" Height="50"/>
+            </Button.Content>
+        </Button>
+        <Button Name="btnBack" Style="{StaticResource btnPattern}" HorizontalAlignment="Left" Width="60" Height="60" VerticalAlignment="Center" Background="LightGray" Click="btnBack_Click">
+            <Button.Content>
+                <Image Source="/Resources/back.png" Width="50" Height="50"/>
+            </Button.Content>
+        </Button>
+        <ComboBox Name="comboQuestion" HorizontalAlignment="Left" Margin="65,5,0,0" VerticalAlignment="Top" BorderThickness="3" FontSize="22" Width="22" Height="22"/>
+        <DataGrid Name="dGridAnswers" Style="{StaticResource dGridPattern}" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ответ" Binding="{Binding name_Answer}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Статус" Binding="{Binding status_Answer}" Width="130"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnEdit" Style="{StaticResource btnPattern}" Width="80" Height="40" Background="LightGray" Click="BtnEdit_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/redaktirovanie.png" Width="30" Height="30"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

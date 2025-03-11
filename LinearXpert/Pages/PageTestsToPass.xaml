@@ -1,0 +1,29 @@
+﻿<Page x:Class="LinearXpert.Pages.PageTestsToPass"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LinearXpert.Pages"
+      mc:Ignorable="d" d:DesignHeight="956" d:DesignWidth="1526">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27*"></RowDefinition>
+            <RowDefinition Height="377*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Тестирование" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" FontSize="36" FontWeight="Bold"/>
+        <TextBox Name="tbSearch" Style="{StaticResource searchTextbox}" Margin="1087,11,10,0" VerticalAlignment="Top" TextChanged="tbSearch_TextChanged"/>
+        <Image Source="/Resources/search.png" HorizontalAlignment="Left" Margin="1097,23,0,0" VerticalAlignment="Top" Height="20" Width="20"/>
+        <DataGrid Name="dGridTests" Style="{StaticResource dGridPattern}" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="1" CanUserResizeColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Тест" Binding="{Binding name_Test}" Width="*"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnBegin" Content="Начать" FontSize="18" Style="{StaticResource btnPattern}" Width="80" Height="40" Background="LightGray" Click="BtnBegin_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

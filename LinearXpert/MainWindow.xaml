@@ -1,0 +1,104 @@
+﻿<Window x:Class="LinearXpert.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LinearXpert"
+        mc:Ignorable="d" Height="1000" Width="1700" Background="Transparent" ResizeMode="NoResize"
+        AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Border Background="#cfd5e5" CornerRadius="40" BorderThickness="2" BorderBrush="#ebedf3"
+            Padding="20" MouseDown="Border_MouseDown">
+        <Border CornerRadius="40">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#fefefe" Offset="0"/>
+                    <GradientStop Color="#fefefe" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="181*"/>
+                </Grid.ColumnDefinitions>
+                <!--Left Menu-->
+                <Border CornerRadius="30" Background="#7163ba" Margin="20">
+                    <Grid>
+                        <StackPanel VerticalAlignment="Top">
+                            <Button Name="btnProfile" Style="{StaticResource menuButton}" Click="btnProfile_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/profile.png" />
+                                </Button.Content>
+                                <Button.ToolTip>
+                                    <ToolTip>Ваш профиль</ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                            <Button Name="btnReferenceBook" Style="{StaticResource menuButton}" Click="btnReferenceBook_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/book.png" />
+                                </Button.Content>
+                                <Button.ToolTip>
+                                    <ToolTip>Справочник по методам решения задач линейного программирования</ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                            <Button Name="btnCalculator" Style="{StaticResource menuButton}" Click="btnCalculator_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/calc.png" />
+                                </Button.Content>
+                                <Button.ToolTip>
+                                    <ToolTip>Калькулятор симплекс-метода</ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                            <Button Name="btnTestManager" Style="{StaticResource menuButton}" Click="btnTestManager_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/constructor.png" />
+                                </Button.Content>
+                                <Button.ToolTip>
+                                    <ToolTip>Управление тестами</ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                            <Button Name="btnTestsToPass" Style="{StaticResource menuButton}" Click="btnTestsToPass_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/tests.png" />
+                                </Button.Content>
+                                <Button.ToolTip>
+                                    <ToolTip>Тестирование студентов</ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                            <Button Name="btnResults" Style="{StaticResource menuButton}" Click="btnResults_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/result.png" />
+                                </Button.Content>
+                                <Button.ToolTip>
+                                    <ToolTip>Результаты тестирования студентов</ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                            <Button Name="btnUsers" Style="{StaticResource menuButton}" Click="btnUsers_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/users.png" />
+                                </Button.Content>
+                                <Button.ToolTip>
+                                    <ToolTip>Менеджер всех пользователей</ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                        </StackPanel>
+                        <Button Name="btnExit" Style="{StaticResource menuButton}" Margin="0,825,0,0" Click="btnExit_Click">
+                            <Button.Content>
+                                <Image Source="/Resources/exit.png" />
+                            </Button.Content>
+                            <Button.ToolTip>
+                                <ToolTip>Выйти из учетной записи</ToolTip>
+                            </Button.ToolTip>
+                        </Button>
+                    </Grid>
+                </Border>
+                <Frame Name="MainFrame" Grid.Column="1" NavigationUIVisibility='Hidden'/>
+                <Label Content="LinearXpert" HorizontalAlignment="Left" Margin="27,-30,0,0" VerticalAlignment="Top" Width="137" FontSize="22" FontWeight="Bold" FontFamily="Sitka Subheading" Grid.ColumnSpan="2"/>
+                <Button Name="btnClose" Grid.Column="1" Style="{StaticResource menuButton}" HorizontalAlignment="Left" Margin="1387,-22,0,0" VerticalAlignment="Top" Width="104" Height="22" Click="btnClose_Click">
+                    <Button.Content>
+                        <Image Source="/Resources/close.png" Width="22" Height="22"/>
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </Border>
+    </Border>
+</Window>

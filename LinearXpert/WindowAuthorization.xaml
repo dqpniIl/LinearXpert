@@ -1,0 +1,34 @@
+﻿<Window x:Class="LinearXpert.WindowAuthorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LinearXpert"
+        mc:Ignorable="d" Height="519" Width="419" Background="Transparent" ResizeMode="NoResize"
+        AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Border Background="#cfd5e5" CornerRadius="40" BorderThickness="2" BorderBrush="#ebedf3"
+            Padding="20" MouseDown="Border_MouseDown">
+        <Grid>
+            <Button Name="btnPower" Style="{StaticResource btnPowerOff}" Width="60" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="315,0,0,0" FontSize="36" FontWeight="Bold" Click="btnPower_Click">
+                <Button.Content>
+                    <Image Source="/Resources/power.png" Width="40" Height="40"/>
+                </Button.Content>
+            </Button>
+            <Label Content="Авторизация" HorizontalAlignment="Center" Margin="0,65,0,0" VerticalAlignment="Top" FontSize="28" FontWeight="Bold"/>
+            <Label Content="Логин" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="36,134,0,0"/>
+            <TextBox Name="tbLogin" Text="admin" Style="{StaticResource tbLogReg}" HorizontalAlignment="Center" Margin="0,168,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="302" Height="40" FontSize="20"/>
+            <Label Content="Пароль" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="36,213,0,0"/>
+            <PasswordBox Name="pbPassword" Password="1" Style="{StaticResource pbLogReg}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="302" Height="39" FontSize="20" Margin="0,247,0,0"/>
+            <Button Name="btnLog" Content="Войти" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top" Width="155" Height="48" FontSize="24" Foreground="White" Background="#FF0080FE" Click="btnLog_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="13"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Name="btnReg" HorizontalAlignment="Center" Margin="0,397,0,0" VerticalAlignment="Top" Height="30" Width="365" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="18" Click="btnReg_Click">
+                <TextBlock Text="Если у вас нет аккаунта, зарегистрируйтесь" TextDecorations="Underline" Foreground="Black"/>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

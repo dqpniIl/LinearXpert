@@ -1,0 +1,27 @@
+﻿<Page x:Class="LinearXpert.Pages.PageAddAnswer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LinearXpert.Pages"
+      mc:Ignorable="d" d:DesignHeight="956" d:DesignWidth="1526">
+    <Grid>
+        <Label Content="Ответ:" HorizontalAlignment="Left" Margin="147,113,0,0" VerticalAlignment="Top" Width="83" Height="41" FontSize="24"/>
+        <TextBox Name="tbName_Test" Text="{Binding name_Answer}" Style="{StaticResource tbPattern}" HorizontalAlignment="Left" Margin="230,113,0,0" VerticalAlignment="Top" TextWrapping="Wrap" Width="1130" Height="114" FontSize="24"/>
+        <CheckBox Name="chkBoxStatus" Content="Правильно" HorizontalAlignment="Left" Margin="230,232,0,0" VerticalAlignment="Top" Width="93" >
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="2.7" ScaleY="2.7" />
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+        <Button Name="btnSave" Style="{StaticResource btnPattern}" Click="btnSave_Click" HorizontalAlignment="Left" Width="60" Height="60" VerticalAlignment="Top" Background="LightGray" Margin="1300,232,0,0">
+            <Button.Content>
+                <Image Source="/Resources/galochka.png" Width="50" Height="50"/>
+            </Button.Content>
+        </Button>
+        <Button Name="btnBack" Style="{StaticResource btnPattern}" Click="btnBack_Click" HorizontalAlignment="Left" Width="60" Height="60" VerticalAlignment="Top" Background="LightGray" Margin="1218,232,0,0">
+            <Button.Content>
+                <Image Source="/Resources/back.png" Width="50" Height="50"/>
+            </Button.Content>
+        </Button>
+    </Grid>
+</Page>

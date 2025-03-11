@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fd13a52346644bd5ba5f7e8398d1d80e" Name="Diagram1">
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.Answers" Width="1.5" PointX="12.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.Groups" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.GroupsOfTeacher" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.Profiles" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.Questions" Width="1.5" PointX="10" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.QuestionsOfTest" Width="1.5" PointX="12.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.ReferenceBook" Width="1.5" PointX="7.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.Results" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.Roles" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.Tests" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.TypesOfAnswer" Width="1.5" PointX="7.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinearProgrammingEducationModel.Users" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__Answers__id_Ques__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__GroupsOfT__id_Gr__503BEA1C" ManuallyRouted="false" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__Profiles__id_Gro__3F115E1A" ManuallyRouted="false" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__GroupsOfT__id_Us__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__Profiles__Id_Pro__3E1D39E1" ManuallyRouted="false" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__Results__id_Prof__40058253" ManuallyRouted="false" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__Questions__id_Qu__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__Questions__id_Ty__607251E5" ManuallyRouted="false" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__Questions__id_Te__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__Results__id_Test__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="LinearProgrammingEducationModel.FK__Users__id_Role__5070F446" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

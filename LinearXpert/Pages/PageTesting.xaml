@@ -1,0 +1,35 @@
+﻿<Page x:Class="LinearXpert.Pages.PageTesting"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LinearXpert.Pages"
+      mc:Ignorable="d" d:DesignHeight="956" d:DesignWidth="1526">
+    <Grid>
+        <TextBox Name="tbTest" HorizontalAlignment="Left" Margin="118,31,0,0" VerticalAlignment="Top" FontSize="22" Width="1267" Height="34" TextWrapping="Wrap" BorderBrush="White" BorderThickness="0" IsReadOnly="True"/>
+        <TextBox Name="tbQuestion" HorizontalAlignment="Left" Margin="118,98,0,0" VerticalAlignment="Top" FontSize="18" Width="1267" Height="80" TextWrapping="Wrap" BorderBrush="White" BorderThickness="0" IsReadOnly="True"/>
+        <Label Content="Варианты ответов" HorizontalAlignment="Left" Margin="118,178,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <ListBox Name="listboxAnswers" Margin="118,217,141,403" SelectionMode="Single" SelectionChanged="listboxAnswers_SelectionChanged" FontSize="16"/>
+        <Button Name="btnAnswer" Click="btnAnswer_Click" Style="{StaticResource btnPattern}" HorizontalAlignment="Left" Width="113" Height="49" VerticalAlignment="Top" Background="LightGray" Margin="1403,217,0,0">
+            <Button.Content>
+                <Image Source="/Resources/galochka.png" Width="50" Height="30"/>
+            </Button.Content>
+        </Button>
+        <DataGrid Name="dGridAnswers" IsReadOnly="True" AutoGenerateColumns="False" Margin="118,217,141,307">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Name="chkBoxType">
+                                <CheckBox.LayoutTransform>
+                                    <ScaleTransform ScaleX="2.5" ScaleY="2.5" />
+                                </CheckBox.LayoutTransform>
+                            </CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding name_Answer}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

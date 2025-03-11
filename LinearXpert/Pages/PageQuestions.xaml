@@ -1,0 +1,106 @@
+﻿<Page x:Class="LinearXpert.Pages.PageQuestions"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LinearXpert.Pages"
+      mc:Ignorable="d" d:DesignHeight="956" d:DesignWidth="1526">
+    <Grid>
+        <Button Name="btnAdd" Style="{StaticResource btnPattern}" Width="60" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Background="LightGray" Margin="1002,7,0,0" FontSize="36" FontWeight="Bold" Click="btnAdd_Click">
+            <Button.Content>
+                <Image Source="/Resources/plus.png" Width="40" Height="40"/>
+            </Button.Content>
+        </Button>
+        <Button Name="btnDel" Style="{StaticResource btnPattern}" Width="60" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Background="LightGray" Margin="1067,7,0,0" FontSize="36" FontWeight="Bold" Click="btnDel_Click">
+            <Button.Content>
+                <Image Source="/Resources/delete.png" Width="50" Height="50"/>
+            </Button.Content>
+        </Button>
+        <Button Name="btnBack" Style="{StaticResource btnPattern}" HorizontalAlignment="Left" Width="60" Height="60" VerticalAlignment="Top" Background="LightGray" Click="btnBack_Click" Margin="0,5,0,0">
+            <Button.Content>
+                <Image Source="/Resources/back.png" Width="50" Height="50"/>
+            </Button.Content>
+        </Button>
+        <ComboBox Name="comboTest" HorizontalAlignment="Left" Margin="65,7,0,0" BorderThickness="3" VerticalAlignment="Top" FontSize="22" Width="22" Height="22"/>
+        <TextBox Name="tbSearchQuestionsOfTest" Style="{StaticResource searchTextbox}" Margin="366,15,773,0" VerticalAlignment="Top" TextChanged="tbSearchQuestionsOfTest_TextChanged"/>
+        <Image Source="/Resources/search.png" HorizontalAlignment="Left" Margin="376,27,0,0" VerticalAlignment="Top" Height="20" Width="20"/>
+        <DataGrid Name="dGridQuestionsOfTest" Style="{StaticResource dGridPattern}" Margin="0,70,773,0" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Вопросы теста" Binding="{Binding name_Question}" Width="*"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnMinus" Style="{StaticResource btnPattern}" Width="80" Height="40" Background="LightGray" Click="btnMinus_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/minus.png" Width="30" Height="30"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnEdit" Style="{StaticResource btnPattern}" Width="80" Height="40" Background="LightGray" Click="BtnEdit_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/redaktirovanie.png" Width="30" Height="30"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Настройка" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnAnswersQuestionsOfTest" Style="{StaticResource btnPattern}" Width="80" Height="40" Background="LightGray" Click="btnAnswersQuestionsOfTest_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/setting.png" Width="30" Height="30"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="tbSearchQuestions" Style="{StaticResource searchTextbox}" Margin="1134,15,10,0" VerticalAlignment="Top" TextChanged="tbSearchQuestions_TextChanged"/>
+        <Image Source="/Resources/search.png" HorizontalAlignment="Left" Margin="1144,27,0,0" VerticalAlignment="Top" Height="20" Width="20"/>
+        <DataGrid Name="dGridQuestions" Style="{StaticResource dGridPattern}" Margin="773,70,0,0" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Вопросы" Binding="{Binding name_Question}" Width="*"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnPlus" Style="{StaticResource btnPattern}" Width="80" Height="40" Background="LightGray" Click="btnPlus_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/plusdGrid.png" Width="30" Height="30"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnEdit" Style="{StaticResource btnPattern}" Width="80" Height="40" Background="LightGray" Click="BtnEdit_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/redaktirovanie.png" Width="30" Height="30"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Настройка" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnAnswersQuestions" Style="{StaticResource btnPattern}" Width="80" Height="40" Background="LightGray" Click="btnAnswersQuestions_Click">
+                                <Button.Content>
+                                    <Image Source="/Resources/setting.png" Width="30" Height="30"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
